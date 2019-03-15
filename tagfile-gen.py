@@ -2,6 +2,8 @@ import os
 directory = '_posts/'
 
 tagslist = []
+finaltags = []
+
 for file in os.listdir(directory):
     print (file)
     f = open('_posts/' + file)
@@ -17,5 +19,9 @@ for file in os.listdir(directory):
 
 for tags in tagslist:
     for tag in tags:
-        print (tag)
-    print('\n')
+        if tag not in finaltags:
+            finaltags.append(tag)
+
+
+for final in finaltags:
+    print( final )
